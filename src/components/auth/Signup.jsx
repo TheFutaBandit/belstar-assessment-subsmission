@@ -199,9 +199,13 @@ const Signup = () => {
       localStorage.setItem("userRole", newUser.role);
       localStorage.setItem("userId", newUser.userId);
       localStorage.setItem("email", newUser.email);
+
       
       // Create log entry for admin tracking
+      const preexistingLogs = JSON.parse(localStorage.getItem('userLogs') || '[]');
+
       const logData = {
+        id: preexistingLogs.length + 1,
         userId: newUser.userId,
         username: newUser.email,
         fullName: newUser.fullName,

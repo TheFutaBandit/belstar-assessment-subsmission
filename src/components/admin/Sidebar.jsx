@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaChartPie, FaUsers, FaTasks, FaCog } from "react-icons/fa";
+import { Logs } from "lucide-react";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -11,6 +12,7 @@ const Sidebar = () => {
     { path: "/admin/manage-users", label: "Manage Users", icon: <FaUsers /> },
     { path: "/admin/manage-tasks", label: "Manage Tasks", icon: <FaTasks /> },
     { path: "/admin/settings", label: "Settings", icon: <FaCog /> },
+    { path: "/admin/user-logs", label: "User Logs", icon : <Logs />}
   ];
 
   return (

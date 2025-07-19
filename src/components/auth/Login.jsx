@@ -90,9 +90,12 @@ const Login = () => {
         localStorage.setItem("userRole", user.role);
         localStorage.setItem("userId", user.userId);
         localStorage.setItem("email", email);
+
+        const preexistingLogs = JSON.parse(localStorage.getItem('userLogs') || '[]');
         
         // Create log entry for admin tracking
         const logData = {
+          id: preexistingLogs.length + 1,
           userId: user.userId,
           username: email,
           role: user.role,
